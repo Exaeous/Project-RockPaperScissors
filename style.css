@@ -9,3 +9,31 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+p {
+  font-size: larger;
+}
+
+p,
+.buttons {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  background-color: black;
+  font-size: medium;
+}
+
+.scores > div {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
