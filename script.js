@@ -4,6 +4,11 @@ const rock = document.getElementById("rock-button");
 const paper = document.getElementById("paper-button");
 const scissors = document.getElementById("scissors-button");
 
+const currentScore = document.getElementsByClassName("score");
+
+const finalPlayerScore = document.getElementById("player-score");
+const finalComputerScore = document.getElementById("computer-score");
+
 const container = document.getElementById("container");
 
 const result = document.createElement("div");
@@ -34,6 +39,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "It's a Draw";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -42,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Win! Rock beats Scissors";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -50,6 +57,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Win! Paper beats Rock";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -58,6 +66,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Win! Scissors beats Paper";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -66,6 +75,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Lose! Paper beats Rock";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -74,6 +84,7 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Lose! Scissors beats Paper";
     container.append(result);
+    liveScore();
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
     playerPlays.textContent = `You chose ${playerSelection}`;
@@ -82,16 +93,28 @@ function playRound(playerSelection, computerSelection) {
     container.append(computerPlays);
     result.textContent = "You Lose! Rock beats Scissors";
     container.append(result);
+    liveScore();
   }
+}
+
+function liveScore() {
   finalScore();
+  finalPlayerScore.textContent = `${playerScore}`;
+  finalComputerScore.textContent = `${computerScore}`;
+  currentScore.append(finalPlayerScore);
+  currentScore.append(finalComputerScore);
 }
 
 function finalScore() {
   if (playerScore === 5) {
     score.textContent = "Player Wins!";
+    score.style.color = "green";
+    score.style.fontSize = "50px";
     container.append(score);
   } else if (computerScore === 5) {
     score.textContent = "Computer Wins!";
+    score.style.color = "red";
+    score.style.fontSize = "50px";
     container.append(score);
   }
 }

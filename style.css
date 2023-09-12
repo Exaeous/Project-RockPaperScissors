@@ -34,6 +34,24 @@ p {
   font-size: medium;
 }
 
+.scores {
+  margin: 30px;
+  gap: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  font-size: larger;
+  display: flex;
+  gap: 30px;
+}
+
+#player-score,
+#computer-score {
+  font-size: larger;
+}
+
 #container > div {
   margin: 10px;
   display: flex;
