@@ -12,9 +12,11 @@ h1 {
 
 p {
   font-size: larger;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
 }
 
-p,
 .buttons {
   margin: 30px;
   display: flex;
@@ -32,8 +34,9 @@ p,
   font-size: medium;
 }
 
-.scores > div {
-  margin: 30px;
+#container > div {
+  margin: 10px;
   display: flex;
   justify-content: center;
+  font-size: larger;
 }
