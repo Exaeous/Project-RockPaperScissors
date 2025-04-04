@@ -1,21 +1,17 @@
 "use strict";
 
-// Logic for Computer choice
+// Logic to get Computers choice
 const computersChoices = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
-  let computerChoice =
-    computersChoices[Math.floor(Math.random() * computersChoices.length)];
-  return computerChoice;
+  return computersChoices[Math.floor(Math.random() * computersChoices.length)];
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
 
-// Logic for Human choice
-
+// Logic to get Humans choice
 function getHumanChoice() {
-  let humanChoice = prompt("Enter your choice");
-  return humanChoice;
+  return prompt("Enter your choice");
 }
 
 console.log(getHumanChoice());
