@@ -10,3 +10,12 @@ function getComputerChoice() {
 }
 
 getComputerChoice();
+
+// Logic for Human choice
+
+function getHumanChoice() {
+  let humanChoice = prompt("Enter your choice");
+  return humanChoice;
+}
+
+console.log(getHumanChoice());
