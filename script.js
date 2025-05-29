@@ -31,32 +31,43 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "rock" && computerChoice === "paper") {
     computerScore++;
-    console.log("You lose! Paper beats Rock");
+    showComputersScore();
+    result.textContent = "You lose! Paper beats Rock";
   } else if (humanChoice === "paper" && computerChoice === "scissors") {
     computerScore++;
-    console.log("You lose! Scissors beats paper");
+    showComputersScore();
+    result.textContent = "You lose! Scissors beats paper";
   } else if (humanChoice === "scissors" && computerChoice === "rock") {
     computerScore++;
-    console.log("You lose! Rock beats Scissors");
+    showComputersScore();
+    result.textContent = "You lose! Rock beats Scissors";
   } else if (computerChoice === "rock" && humanChoice === "paper") {
     humanScore++;
-    console.log("You win! Paper beats Rock");
+    showHumansScore();
+    result.textContent = "You win! Paper beats Rock";
   } else if (computerChoice === "paper" && humanChoice === "scissors") {
     humanScore++;
-    console.log("You win! Scissors beats paper");
+    showHumansScore();
+    result.textContent = "You win! Scissors beats paper";
   } else if (computerChoice === "scissors" && humanChoice === "rock") {
     humanScore++;
-    console.log("You win! Rock beats Scissors");
+    showHumansScore();
+    result.textContent = "You win! Rock beats Scissors";
   } else {
-    console.log("It's a draw");
+    result.textContent = "It's a draw";
   }
 }
 
-// Declaring the winnner
-if (humanScore > computerScore) {
-  console.log(`You win! Your score is ${humanScore}`);
-} else if (computerScore > humanScore) {
-  console.log(`The Computer won! The Computer's score is ${computerScore}`);
-} else {
-  console.log(`It's a draw`);
+// Showing the result
+let result = document.querySelector(".result");
+
+// Showing the score
+let humansScore = document.querySelector(".human-score");
+function showHumansScore() {
+  humansScore.textContent = humanScore;
+}
+
+let computersScore = document.querySelector(".computer-score");
+function showComputersScore() {
+  computersScore.textContent = computerScore;
 }
