@@ -5,9 +5,20 @@ let humanScore = 0;
 let computerScore = 0;
 
 // Logic to get Humans choice
-function getHumanChoice() {
-  return prompt("Enter your choice");
-}
+const rockButton = document.querySelector(".rock-btn");
+rockButton.addEventListener("click", () => {
+  playRound("rock", getComputerChoice());
+});
+
+const paperButton = document.querySelector(".paper-btn");
+paperButton.addEventListener("click", () => {
+  playRound("paper", getComputerChoice());
+});
+
+const scissorsButton = document.querySelector(".scissors-btn");
+scissorsButton.addEventListener("click", () => {
+  playRound("scissors", getComputerChoice());
+});
 
 // Logic to get Computers choice
 const computersChoices = ["rock", "paper", "scissors"];
@@ -40,18 +51,6 @@ function playRound(humanChoice, computerChoice) {
     console.log("It's a draw");
   }
 }
-
-const humanSelection = getHumanChoice().toLowerCase();
-const computerSelection = getComputerChoice();
-
-console.log(`Human plays ${humanSelection}`);
-console.log(`Computer plays ${computerSelection}`);
-
-playRound(humanSelection, computerSelection);
-
-console.log(`Human score is ${humanScore}`);
-console.log(`Computer score is ${computerScore}`);
-console.log("---------");
 
 // Declaring the winnner
 if (humanScore > computerScore) {
