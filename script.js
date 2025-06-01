@@ -96,3 +96,8 @@ function declareWinner() {
     disableAllButtons();
   }
 }
+
+//Reset game
+const resetGame = document.querySelector(".reset-button");
+
+resetGame.addEventListener("click", () => location.reload());
