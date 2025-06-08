@@ -79,21 +79,20 @@ function showComputersScore() {
 }
 
 // Ending the game
-function disableAllButtons() {
-  const buttons = document.getElementsByTagName("button");
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].disabled = true;
-  }
+function disableGameButtons() {
+  rockButton.disabled = true;
+  paperButton.disabled = true;
+  scissorsButton.disabled = true;
 }
 
 // Declaring the winner and disabling the buttons
 function declareWinner() {
   if (humanScore === 5 && computerScore < 5) {
     result.textContent = "You win";
-    disableAllButtons();
+    disableGameButtons();
   } else if (computerScore === 5 && humanScore < 5) {
     result.textContent = "Computer win's";
-    disableAllButtons();
+    disableGameButtons();
   }
 }
 
